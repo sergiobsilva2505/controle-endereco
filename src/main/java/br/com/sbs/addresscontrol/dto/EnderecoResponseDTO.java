@@ -1,5 +1,7 @@
 package br.com.sbs.addresscontrol.dto;
 
+import br.com.sbs.addresscontrol.entities.Endereco;
+
 public class EnderecoResponseDTO {
 
     private Integer id;
@@ -13,6 +15,17 @@ public class EnderecoResponseDTO {
 
 
     public EnderecoResponseDTO() {
+    }
+
+    public EnderecoResponseDTO(Endereco endereco) {
+        this.id = endereco.getId();
+        this.nomeUsuario = null; // todo inserir nome do usuario
+        this.cep = endereco.getCep();
+        this.logradouro = endereco.getLogradouro();
+        this.complemento = endereco.getComplemento();
+        this.bairro = endereco.getBairro();
+        this.localidade = endereco.getLocalidade();
+        this.numero = endereco.getNumero();
     }
 
     public Integer getId() {
