@@ -4,28 +4,14 @@ import br.com.sbs.addresscontrol.entities.Usuario;
 
 import java.time.LocalDate;
 
-public class UsuarioResponseDTO {
+public class UsuarioDTO {
 
-    private Integer id;
     private String nome;
     private String email;
     private String cpf;
     private LocalDate dtNascimento;
 
-    public UsuarioResponseDTO(Usuario usuario) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.dtNascimento = dtNascimento;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public UsuarioDTO() {
     }
 
     public String getNome() {
@@ -58,5 +44,15 @@ public class UsuarioResponseDTO {
 
     public void setDtNascimento(LocalDate dtNascimento) {
         this.dtNascimento = dtNascimento;
+    }
+
+    public static Usuario toUsuario(UsuarioDTO dto){
+        Usuario obj = new Usuario(
+                dto.getNome(),
+                dto.getCpf(),
+                dto.getEmail(),
+                dto.getDtNascimento()
+        );
+        return obj;
     }
 }

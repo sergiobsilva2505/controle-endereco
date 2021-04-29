@@ -28,6 +28,13 @@ public class Usuario implements Serializable {
         this.dtNascimento = dtNascimento;
     }
 
+    public Usuario(String nome, String email, String cpf, LocalDate dtNascimento) {
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
+        this.dtNascimento = dtNascimento;
+    }
+
     public Integer getId() {
         return id;
     }
