@@ -2,7 +2,7 @@ package br.com.sbs.addresscontrol.controller;
 
 import br.com.sbs.addresscontrol.service.UsuarioService;
 import br.com.sbs.addresscontrol.dto.UsuarioDTO;
-import br.com.sbs.addresscontrol.dto.NewUsuarioResponseDTO;
+import br.com.sbs.addresscontrol.dto.NovoUsuarioResponseDTO;
 import br.com.sbs.addresscontrol.dto.UsuarioResponseDTO;
 import br.com.sbs.addresscontrol.entities.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +28,9 @@ public class UsuarioController {
     }
 
     @PostMapping
-    public ResponseEntity<NewUsuarioResponseDTO> insertUsuario(@RequestBody UsuarioDTO obj){
+    public ResponseEntity<NovoUsuarioResponseDTO> insertUsuario(@RequestBody UsuarioDTO obj){
         Usuario usuario = usuarioService.insert(UsuarioDTO.toUsuario(obj));
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(usuario.getId()).toUri();
-        return ResponseEntity.created(uri).body(new NewUsuarioResponseDTO(usuario));
+        return ResponseEntity.created(uri).body(new NovoUsuarioResponseDTO(usuario));
     }
 }

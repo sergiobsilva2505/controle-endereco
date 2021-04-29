@@ -4,7 +4,7 @@ import br.com.sbs.addresscontrol.entities.Usuario;
 
 import java.time.LocalDate;
 
-public class NewUsuarioResponseDTO {
+public class NovoUsuarioResponseDTO {
 
     private Integer id;
     private String nome;
@@ -12,7 +12,7 @@ public class NewUsuarioResponseDTO {
     private String cpf;
     private LocalDate dtNascimento;
 
-    public NewUsuarioResponseDTO(Usuario usuario) {
+    public NovoUsuarioResponseDTO(Usuario usuario) {
         this.id = usuario.getId();
         this.nome = usuario.getNome();
         this.email = usuario.getEmail();
