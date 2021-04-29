@@ -48,6 +48,7 @@ public class UsuarioDTO {
 
     public static Usuario toUsuario(UsuarioDTO dto){
         Usuario obj = new Usuario(
+                null,
                 dto.getNome(),
                 dto.getCpf(),
                 dto.getEmail(),

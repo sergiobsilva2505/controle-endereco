@@ -9,7 +9,6 @@ import java.time.LocalDate;
 
 @Entity
 public class Usuario implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -20,15 +19,11 @@ public class Usuario implements Serializable {
     private String cpf;
     private LocalDate dtNascimento;
 
-    public Usuario(Integer id, String nome, String email, String cpf, LocalDate dtNascimento) {
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
-        this.cpf = cpf;
-        this.dtNascimento = dtNascimento;
+    public Usuario(){
     }
 
-    public Usuario(String nome, String email, String cpf, LocalDate dtNascimento) {
+    public Usuario(Integer id, String nome, String email, String cpf, LocalDate dtNascimento) {
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
